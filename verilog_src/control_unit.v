@@ -73,13 +73,12 @@ module control_unit(
             // Actions
             // if writing on reg I have to set WE_REG e unset WE_MEM 
             // If writing on mem I have to unset WE_REG e set WE_MEM 
-            // If branching or jumping I have to unset WE_REG e unset WE_MEM 
+            // If branching I have to unset WE_REG and unset WE_MEM 
             // Instructions that write on REG
-            // Arithmeti and load
-            // Instructions that write on MEM 
-            // Others
-            // Instrution that do not write: JMP, BRANCHES
-            
+            // Arithmetic, load and jumps
+            // Instructions that write on MEM:
+            // only stores
+
          sel_alu_i1=1'b1;
         case(current_instruction[6:0]) //only opcode  
                 `ITYPE1,`RTYPE: begin
@@ -119,3 +118,4 @@ module control_unit(
     
     
 endmodule
+

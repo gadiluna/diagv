@@ -78,9 +78,14 @@ module tb_diagv_top();
     integer j;
     integer k;    
     
-    always
+    always //this block repeat forever
     begin
         #10 CLK = !CLK;
+    end
+    
+    initial begin
+        #10;
+        forever #20; //this is used only to break point at each clock cycle. 
     end
     
     initial
